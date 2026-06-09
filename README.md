@@ -2,9 +2,12 @@
 
 This repository provides an R script to compute **DeflVol**, the estimated **corneal deflection volume** at the **highest concavity (HC)** moment in the Corvis ST framework.
 
-The implementation uses a **two-sphere spherical geometry model** and evaluates the overlap volume by **numerical disk integration** with the **trapezoidal rule**.
+The implementation uses a **two-sphere spherical geometry model** and provides two mathematically equivalent algorithms:
 
-The final result is written to `df$DeflVol`.
+- **Disk integration**: numerical trapezoidal integration of the rotated sagittal overlap region.
+- **Closed-form intersection volume**: the analytical volume of intersection of two spheres.
+
+Both values are computed for every row. The default reported result is written to `df$DeflVol`, which equals the closed-form result `df$DeflVol_closed`.
 
 ---
 
@@ -19,7 +22,7 @@ The final result is written to `df$DeflVol`.
 Install the required R packages before running the script:
 
 ```r
-install.packages(c("readr", "dplyr"))
+install.packages("readr")
 ```
 
 ---
@@ -56,7 +59,7 @@ The script follows these deterministic geometry settings:
   - `z_inverse = 0`
   - `z_cornea = d`
 
-- Integration region:
+- Integration region for disk integration:
 
   The valid interval is determined from the overlap of the two spheres along the `z` axis.
 
@@ -64,11 +67,15 @@ The script follows these deterministic geometry settings:
 
   At each `z`, the effective radius is the minimum of the two sphere cross-sectional radii over the overlap region.
 
-- Numerical integration:
+- Numerical disk integration:
 
   `DeflVol = pi * integral(rho(z)^2 dz)`
 
   computed numerically using the trapezoidal rule with default resolution `N = 4000`.
+
+- Closed-form two-sphere intersection:
+
+  `DeflVol = pi * (CR + IR - d)^2 * [d^2 + 2d(CR + IR) - 3(CR - IR)^2] / (12d)`
 
 ---
 
@@ -85,7 +92,9 @@ source("CorDeflVol.R")
 After execution, the script will:
 
 - read `data.csv` into `df`
-- compute `df$DeflVol`
+- compute disk-integration and closed-form DeflVol, plus their absolute/relative difference
+
+If `data.csv` is not present, the script still loads the calculation functions and skips creating `df`.
 
 The script also includes an optional output line:
 
@@ -102,7 +111,30 @@ You can uncomment it if you want to save the results as a new CSV file.
 The computed values are stored in:
 
 ```r
-df$DeflVol
+df$DeflVol_integral   # numerical disk integration, N = 4000
+df$DeflVol_closed     # closed-form two-sphere intersection volume
+df$DeflVol            # default reported result, same as DeflVol_closed
+df$DeflVol_abs_error       # absolute difference between the two algorithms
+df$DeflVol_rel_error       # relative difference between the two algorithms
+```
+
+---
+
+## Function usage
+
+You can also source the file and call the calculation functions directly:
+
+```r
+source("CorDeflVol.R")
+
+# One eye, closed-form algorithm
+compute_deflvol_one(CR = 7.8, IR = 6.4, DeflAmp = 0.93, method = "closed")
+
+# One eye, disk-integration algorithm
+compute_deflvol_one(CR = 7.8, IR = 6.4, DeflAmp = 0.93, method = "integral", N = 4000)
+
+# Data frame input, both algorithms
+df_out <- compute_deflvol_dual(df, N = 4000)
 ```
 
 ---
@@ -111,3 +143,4 @@ df$DeflVol
 
 - The implementation uses numerical safety handling by clamping negative squared-radius terms to zero before square root evaluation.
 - If the computed overlap interval is invalid or empty, the function returns `0` for that row.
+- In physiological HC geometry, disk integration and the closed-form solution should agree up to numerical quadrature error. Increasing `N` reduces the disk-integration error.
