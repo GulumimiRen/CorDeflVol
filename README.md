@@ -8,10 +8,13 @@ available.
 ## Install
 
 ```r
-# from GitHub
-remotes::install_github("GulumimiRen/CorDeflVol")
+install.packages("pak")
+pak::pak("GulumimiRen/CorDeflVol")
+```
 
-# from the package directory
+From the package directory:
+
+```r
 install.packages(".", repos = NULL, type = "source")
 ```
 
@@ -21,17 +24,20 @@ Download [CorDeflVol_0.1.0.tar.gz](https://github.com/GulumimiRen/CorDeflVol/rel
 from the [v0.1.0 release](https://github.com/GulumimiRen/CorDeflVol/releases/tag/v0.1.0)
 (Assets on that page). The file is not stored in the git repository.
 
+With **pak** (local path or release URL):
+
 ```r
-install.packages("path/to/CorDeflVol_0.1.0.tar.gz", repos = NULL, type = "source")
+pak::pak("path/to/CorDeflVol_0.1.0.tar.gz")
 ```
 
-Or download in R before installing:
+```r
+pak::pak("https://github.com/GulumimiRen/CorDeflVol/releases/download/v0.1.0/CorDeflVol_0.1.0.tar.gz")
+```
+
+With base R:
 
 ```r
-url <- "https://github.com/GulumimiRen/CorDeflVol/releases/download/v0.1.0/CorDeflVol_0.1.0.tar.gz"
-dest <- tempfile(fileext = ".tar.gz")
-download.file(url, dest, mode = "wb")
-install.packages(dest, repos = NULL, type = "source")
+install.packages("path/to/CorDeflVol_0.1.0.tar.gz", repos = NULL, type = "source")
 ```
 
 ## Usage
