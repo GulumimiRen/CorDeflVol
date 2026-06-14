@@ -1,0 +1,15 @@
+Package: CorDeflVol
+Title: Corneal Deflection Volume (HC Two-Sphere)
+Version: 0.1.0
+Authors@R: person("RQ", email = "rq@example.com", role = c("aut", "cre"))
+Description: Compute corneal deflection volume at highest concavity (HC)
+    using a two-sphere intersection model. Provides closed-form and
+    disk-integration algorithms.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.0.0)
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
