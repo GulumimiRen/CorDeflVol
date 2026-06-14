@@ -12,7 +12,7 @@
 #' @param method `"closed"` (default) or `"integral"`.
 #' @param N Number of trapezoid segments for the integral method (default 4000).
 #' @return Numeric vector of deflection volumes. If inputs are in mm, volumes
-#'   are in mm³ (microlitres). Invalid rows return `NA`; non-overlapping
+#'   are in μL (1 mm³ = 1 μL). Invalid rows return `NA`; non-overlapping
 #'   geometry returns 0.
 #' @export
 #' @examples

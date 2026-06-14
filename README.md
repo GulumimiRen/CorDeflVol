@@ -62,7 +62,7 @@ deflvol(7.8, 6.4, 0.93, method = "integral", N = 4000L)
 | `defl_amp`  | Deflection amplitude at HC (same as `DeflAmp`)   |
 
 Units must be consistent across all three inputs (e.g. mm). When inputs are in
-mm, DeflVol is returned in mm³ (microlitres). Missing or non-positive radii
+mm, DeflVol is returned in μL (1 mm³ = 1 μL). Missing or non-positive radii
 return `NA`; non-overlapping geometry returns 0.
 
 ## Geometry

@@ -20,7 +20,7 @@ to \code{DeflAmp} or \code{HCDeflAmp} in legacy scripts.}
 }
 \value{
 Numeric vector of deflection volumes. If inputs are in mm, volumes
-are in mm³ (microlitres). Invalid rows return \code{NA}; non-overlapping
+are in μL (1 mm³ = 1 μL). Invalid rows return \code{NA}; non-overlapping
 geometry returns 0.
 }
 \description{
