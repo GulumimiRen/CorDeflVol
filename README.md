@@ -61,15 +61,23 @@ deflvol(7.8, 6.4, 0.93, method = "integral", N = 4000L)
 
 ## Inputs
 
-| Parameter   | Description                                      |
-|-------------|--------------------------------------------------|
-| `CR`        | Corneal curvature radius                         |
-| `IR`        | Inverse curvature radius                         |
-| `defl_amp`  | Deflection amplitude at HC (same as `DeflAmp`)   |
+| Parameter  | Description                                    | Unit |
+|------------|------------------------------------------------|------|
+| `CR`       | Corneal curvature radius                       | mm   |
+| `IR`       | Inverse curvature radius                       | mm   |
+| `defl_amp` | Deflection amplitude at HC (same as `DeflAmp`) | mm   |
 
-Units must be consistent across all three inputs (e.g. mm). When inputs are in
-mm, DeflVol is returned in μL (1 mm³ = 1 μL). Missing or non-positive radii
-return `NA`; non-overlapping geometry returns 0.
+Units must be consistent across all three inputs (mm).
+
+Missing or non-positive radii return `NA`; non-overlapping geometry returns 0.
+
+## Outputs
+
+| Parameter | Description              | Unit |
+|-----------|--------------------------|------|
+| `DeflVol` | HC deflection volume     | μL   |
+
+When inputs are in mm, `DeflVol` is in μL (1 mm³ = 1 μL).
 
 ## Geometry
 
