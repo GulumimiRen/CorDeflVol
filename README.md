@@ -45,8 +45,12 @@ install.packages("path/to/CorDeflVol_0.1.0.tar.gz", repos = NULL, type = "source
 ```r
 library(CorDeflVol)
 
+CR <- 7.8
+IR <- 6.4
+HCDeflAmp <- 0.93
+
 # scalar
-deflvol(7.8, 6.4, 0.93)
+deflvol(CR, IR, DeflAmp)
 
 # vectorized
 deflvol(c(7.8, 7.5), c(6.4, 6.2), c(0.93, 0.90))
@@ -56,7 +60,7 @@ library(dplyr)
 df <- df |> mutate(DeflVol = deflvol(CR, IR, DeflAmp))
 
 # disk integration (optional)
-deflvol(7.8, 6.4, 0.93, method = "integral", N = 4000L)
+deflvol(CR, IR, DeflAmp, method = "integral", N = 4000L)
 ```
 
 ## Inputs
