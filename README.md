@@ -69,7 +69,7 @@ deflvol(CR, IR, DeflAmp, method = "integral", N = 4000L)
 |------------|------------------------------------------------|------|
 | `CR`       | Corneal curvature radius                       | mm   |
 | `IR`       | Inverse curvature radius                       | mm   |
-| `defl_amp` | Deflection amplitude at HC (same as `DeflAmp`) | mm   |
+| `DeflAmp`  | Deflection amplitude at HC                     | mm   |
 
 Units must be consistent across all three inputs (mm).
 
@@ -85,7 +85,7 @@ When inputs are in mm, `DeflVol` is in μL (1 mm³ = 1 μL).
 
 ## Geometry
 
-Sphere-center distance: `d = CR + IR - defl_amp`.
+Sphere-center distance: `d = CR + IR - DeflAmp`.
 
 Closed-form two-sphere intersection volume:
 
