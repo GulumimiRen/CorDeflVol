@@ -47,7 +47,7 @@ library(CorDeflVol)
 
 CR <- 7.8
 IR <- 6.4
-HCDeflAmp <- 0.93
+DeflAmp <- 0.93
 
 # scalar
 deflvol(CR, IR, DeflAmp)
