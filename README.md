@@ -22,7 +22,7 @@ install.packages(".", repos = NULL, type = "source")
 
 Download [CorDeflVol_0.1.0.tar.gz](https://github.com/GulumimiRen/CorDeflVol/releases/download/v0.1.0/CorDeflVol_0.1.0.tar.gz)
 from the [v0.1.0 release](https://github.com/GulumimiRen/CorDeflVol/releases/tag/v0.1.0)
-(Assets on that page). The file is not stored in the git repository.
+(Assets on that page).
 
 With **pak** (local path or release URL):
 
