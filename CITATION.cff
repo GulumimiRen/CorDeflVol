@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use CorDeflVol in your research, please cite the article in preferred-citation."
+type: software
+title: "CorDeflVol: Corneal Deflection Volume"
+authors:
+  - name: "CorDeflVol contributors"
+version: "0.1.0"
+license: MIT
+repository-code: "https://github.com/GulumimiRen/CorDeflVol"
+url: "https://github.com/GulumimiRen/CorDeflVol"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Ren
+      given-names: Qi
+    - family-names: Deng
+      given-names: Zhaozhe
+    - family-names: Chu
+      given-names: Zhe
+    - family-names: Pan
+      given-names: Zeyu
+    - family-names: Wan
+      given-names: Pengxia
+  title: "DeflVol: a model-derived volumetric descriptor of corneal deflection at highest concavity under Corvis ST air-puff loading"
+  journal: "Frontiers in Bioengineering and Biotechnology"
+  year: 2026
+  volume: "14"
+  # Article number, rendered as the locator in GitHub's APA/BibTeX citations.
+  start: "1933733"
+  doi: "10.3389/fbioe.2026.1933733"

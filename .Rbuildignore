@@ -1,3 +1,4 @@
 ^\.github$
 ^dist$
 ^.*\.Rcheck$
+^CITATION\.cff$
