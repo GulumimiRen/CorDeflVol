@@ -1,0 +1,21 @@
+bibentry(
+  bibtype = "Article",
+  key = "Ren2026DeflVol",
+  title = paste(
+    "{DeflVol}: a model-derived volumetric descriptor of corneal deflection",
+    "at highest concavity under {Corvis ST} air-puff loading"
+  ),
+  author = c(
+    person("Qi", "Ren"),
+    person("Zhaozhe", "Deng"),
+    person("Zhe", "Chu"),
+    person("Zeyu", "Pan"),
+    person("Pengxia", "Wan")
+  ),
+  journal = "Frontiers in Bioengineering and Biotechnology",
+  year = "2026",
+  volume = "14",
+  pages = "1933733",
+  doi = "10.3389/fbioe.2026.1933733",
+  header = "If you use CorDeflVol in your research, please cite:"
+)

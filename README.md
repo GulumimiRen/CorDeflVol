@@ -94,6 +94,35 @@ Closed-form two-sphere intersection volume:
 The integral method computes the same volume by trapezoidal disk integration
 over the overlap region (default `N = 4000` segments).
 
+## Citation
+
+If you use CorDeflVol in your research, please cite the article describing the
+DeflVol model:
+
+> Ren Q, Deng Z, Chu Z, Pan Z and Wan P (2026). DeflVol: a model-derived volumetric
+> descriptor of corneal deflection at highest concavity under Corvis ST air-puff
+> loading. *Frontiers in Bioengineering and Biotechnology*, 14:1933733.
+> https://doi.org/10.3389/fbioe.2026.1933733
+
+After installing the package, retrieve the reference and its BibTeX entry in R:
+
+```r
+citation("CorDeflVol")
+toBibtex(citation("CorDeflVol"))
+```
+
+```bibtex
+@Article{Ren2026DeflVol,
+  author  = {Qi Ren and Zhaozhe Deng and Zhe Chu and Zeyu Pan and Pengxia Wan},
+  title   = {{DeflVol}: a model-derived volumetric descriptor of corneal deflection at highest concavity under {Corvis ST} air-puff loading},
+  journal = {Frontiers in Bioengineering and Biotechnology},
+  year    = {2026},
+  volume  = {14},
+  pages   = {1933733},
+  doi     = {10.3389/fbioe.2026.1933733}
+}
+```
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
